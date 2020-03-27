@@ -1,5 +1,6 @@
 package com.supinfo.gmy.util.date;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,10 +13,77 @@ import java.util.GregorianCalendar;
 */
 public class DateUtils {
 
+	public static final String DEFAULT_DATE = "yyyyMMdd";
+	public static final String DEFAULT_DATETIME = "yyyyMMdd HHmmssSSS";
+	public static final String SIGN_DATETIME = "yyyy-MM-dd HH:mm:ss";
+
 	public static void main(String[] args) {
 		Date haha = new Date();
 		getDayEndTime(haha);
 
+	}
+
+	/**
+	* @Description: 获取时间字符串工具类
+	* 3种常见pattern
+	* DEFAULT_DATE
+	* DEFAULT_DATETIME
+	* SIGN_DATETIME
+	* @param date
+	* @param pattern
+	* @return 
+	*/
+	public static String getDate(Date date, String pattern) {
+		if (date == null) {
+			date = new Date();
+		}
+		if (org.apache.commons.lang.StringUtils.isBlank(pattern)) {
+			pattern = DEFAULT_DATE;
+		}
+		String result = null;
+		try {
+			SimpleDateFormat formatter = new SimpleDateFormat(pattern);
+			result = formatter.format(date);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return result;
+		}
+		return result;
+
+	}
+
+	/**
+	* @Description: 获取时间间隔天数
+	* @param smdate
+	* @param bdate
+	* @return
+	* @throws ParseException 
+	*/
+	public static String daysBetween(String smdate, String bdate) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(sdf.parse(smdate));
+		long time1 = cal.getTimeInMillis();
+		cal.setTime(sdf.parse(bdate));
+		long time2 = cal.getTimeInMillis();
+		long between_days = (time2 - time1) / (1000 * 3600 * 24);
+		return String.valueOf(between_days);
+	}
+
+	/**
+	* @Description: 获取两个时间间隔,精度毫秒
+	* @param currentDate
+	* @param beferDate
+	* @return 
+	*/
+	public static long getTwoHour(java.util.Date currentDate, java.util.Date beferDate) {
+		long hours = 0;
+		try {
+			hours = (currentDate.getTime() - beferDate.getTime()) / (60 * 60 * 1000);
+			// 这里精确到了秒，我们可以在做差的时候将时间精确到天
+		} catch (Exception e) {
+		}
+		return hours;
 	}
 
 	/**
