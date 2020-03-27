@@ -4,7 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 
 /** 
-* @Description: 
+* @Description:  
 * 定义:Base64已经成为网络上常见的传输8Bit字节代码的编码方式之一。
 * 1 bit名称是位或比特 只能表示0或者1中     标识方式:Bit
 * 1 byte=8bit byte是字节的意思是文件的基本单位 标识方式:B
