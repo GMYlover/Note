@@ -1,4 +1,4 @@
-package com.supinfo.gmy.util.RegexUtil;
+package com.supinfo.gmy.util.regex;
 
 import java.util.ArrayList;
 import java.util.List;
