@@ -44,7 +44,7 @@ public class RedisUtil {
 		} catch (Exception e) {
 			return false;
 		}
-
+ 
 	}
 
 	/**
