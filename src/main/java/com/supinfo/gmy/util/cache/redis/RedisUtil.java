@@ -1,4 +1,4 @@
-package com.supinfo.gmy.util.redis;
+package com.supinfo.gmy.util.cache.redis;
 
 import java.util.concurrent.TimeUnit;
 

@@ -17,7 +17,7 @@ public class GetMd5ResultUtil {
 	private static final String JOINEQUAL = "=";
 
 	/**
-	* @Description: 
+	* @Description: 双方用相同的key和加密因子对相同的内容进行加密,如果最后得到的内容相同就比较通过
 	* @param paramMap 把加密的key和value都放入map里面
 	* 例:Map<String, String> paramMap = new HashMap<String, String>();
 	*   paramMap.put(WaterInsuranceConstant.OPENID, request.getOpenId());
@@ -26,7 +26,7 @@ public class GetMd5ResultUtil {
 	* 例:private static final String factorKey = "randomFactorKey";
 	* @param randomFactor 自定义的随机因子
 	* 例:private static final String md5RandomFactor=123456
-	* @return 
+	* @return byte[]转换位16进制再转换为字符串
 	*/
 	public static String getMd5Result(Map<String, String> paramMap, String factorKey, String randomFactor) {
 		Map<String, String> treeMap = new TreeMap<String, String>(paramMap);
