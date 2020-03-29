@@ -27,6 +27,20 @@ public class Question1 {
 		solution(haha);
 	}
 
+	/**
+	* @Description: 
+	* 步骤:
+	* 1 首先判断当前索引对应的值是否等于当前索引等于则跳过当前索引
+	* 2 如果不等则判断此索引上的值是否已经有了且对应，如果对应则返回，否则交换
+	* 3 换完继续换直到index上的值等于当前index
+	* 知识点:
+	* 1声明一维数组
+	* 2一维数据遍历for和while的使用
+	* 注意:
+	* 根本没想明白如何实现，就去写代码，所以写不出来也正常
+	* @param args
+	* @return 
+	*/
 	public static boolean solution(int[] args) {
 		for (int index = 0; index < args.length; index++) {
 			while (index != args[index]) {
