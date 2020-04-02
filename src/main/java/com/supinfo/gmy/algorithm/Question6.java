@@ -1,7 +1,7 @@
 package com.supinfo.gmy.algorithm;
 
 /** 
-* @Description: 二叉树的下一个结点
+* @Description: 二叉树的下一个结点,暂时不会！！！！！
 * @author: gaomingyang
 * @date: 2020-03-31
 */
