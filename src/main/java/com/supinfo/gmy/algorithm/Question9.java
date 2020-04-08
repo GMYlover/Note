@@ -17,7 +17,7 @@ public class Question9 {
 	/**
 	* @Description: 学会归纳总结，找出规律，一定要学会数学表达，然后用代码表达出来，本质就是兔子问题
 	* @param a
-	* @return 
+	* @return  
 	*/
 	public static int getTotalRabbit(int a) {
 		if (a <= 0)
