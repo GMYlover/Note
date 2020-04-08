@@ -12,7 +12,11 @@ public class Question8 {
 		System.out.println(result);
 	}
 
-	/*方法一就是递归思想,最后结果等于前一个和前2个*/
+	/**
+	* @Description: 递归思想，核心是f(n)=f(n-1)+f(n-2) 
+	* @param a
+	* @return 
+	*/
 	public static int getTotalRabbit(int a) {
 		if (a <= 0)
 			return 0;
