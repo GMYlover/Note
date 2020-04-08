@@ -24,7 +24,7 @@ public class Question12 {
 		}
 		if (array.length == 1) {
 			return array[0];
-		}
+		} 
 		for (int i = 1; i < array.length; i++) {
 			if (array[i] < array[i - 1]) {
 				return array[i];
