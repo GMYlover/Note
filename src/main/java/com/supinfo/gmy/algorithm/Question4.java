@@ -37,7 +37,7 @@ public class Question4 {
 	* @param node 
 	*/
 	public static void solution(Node node) {
-		Stack<Integer> haha = new Stack<>();
+		Stack<Integer> haha = new Stack<Integer>();
 		while (node.getNext() != null) {
 			haha.add(node.value);
 			node = node.next;
