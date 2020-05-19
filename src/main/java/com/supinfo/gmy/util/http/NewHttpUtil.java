@@ -81,7 +81,7 @@ public final class NewHttpUtil {
 				return responseMessage;
 			} finally {
 				response.close();
-			}
+			} 
 		} finally {
 			httpClient.close();
 		}
