@@ -18,8 +18,10 @@ public class DateUtils {
 	public static final String SIGN_DATETIME = "yyyy-MM-dd HH:mm:ss";
 
 	public static void main(String[] args) {
-		Date haha = new Date();
-		getDayEndTime(haha);
+		System.out.print(System.currentTimeMillis()/1000);
+
+		/*Date haha = new Date();
+		getDayEndTime(haha);*/
 
 	}
 
@@ -191,5 +193,5 @@ public class DateUtils {
 		System.out.println("Current Time, with hour reset to 3");
 		calendar.clear(Calendar.HOUR_OF_DAY);
 	}
-
+	
 }
