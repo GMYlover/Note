@@ -1,25 +1,45 @@
 package com.supinfo.gmy.algorithm;
 
+/*操作给定的二叉树，将其变换为源二叉树的镜像。*/
 public class Question28 {
-	/*请实现一个函数，用来判断一颗二叉树是不是对称的。注意，如果一个二叉树同此二叉树的镜像是同样的，定义其为对称的。*/
-	// 先假设左右子树下面都符合条件，然后比较左右子树，再往下比较
-	public class Solution {
-		boolean isSymmetrical(TreeNode pRoot) {
-			if (pRoot == null) {
-				return true;
-			}
-			return comRoot(pRoot.left, pRoot.right);
-		}
+	/*	二叉树的镜像定义：源二叉树 
+	     8
+	   /  \
+	  6   10
+	 / \  / \
+	5  7 9 11
+	镜像二叉树
+	     8						
+	   /  \
+	  10   6
+	 / \  / \
+	11 9 7  5
+	{8,6,10,5,7,9,11}
+	8,10,6,11,9,7,5
+	*/
 
-		private boolean comRoot(TreeNode left, TreeNode right) {
-			// TODO Auto-generated method stub
-			if (left == null)
-				return right == null;
-			if (right == null)
-				return false;
-			if (left.val != right.val)
-				return false;
-			return comRoot(left.right, right.left) && comRoot(left.left, right.right);
+	public class Solution {
+		public void Mirror(TreeNode root) {
+			if (root != null) {
+				Mirror(root.left);
+				Mirror(root.right);
+				TreeNode temp = root.left;
+				root.left = root.right;
+				root.right = temp;
+			}
 		}
 	}
+
+	public static void main(String[] args) {
+		TreeNode root = new TreeNode(8);
+		root.left = new TreeNode(6);
+		root.right = new TreeNode(10);
+		root.left.left = new TreeNode(5);
+		root.left.right = new TreeNode(7);
+		root.right.left = new TreeNode(9);
+		root.right.right = new TreeNode(11);
+
+		System.out.println("123");
+	}
+
 }
