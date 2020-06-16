@@ -17,7 +17,7 @@ public class Question37 {
 			if (root == null)
 				return listAll;
 			list.add(root.val);
-			target -= root.val;
+			target -= root.val; 
 			if (target == 0 && root.left == null && root.right == null)
 				listAll.add(new ArrayList<Integer>(list));
 			FindPath(root.left, target);
