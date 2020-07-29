@@ -3,7 +3,11 @@ package com.supinfo.gmy.util.md5;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
+
 import org.apache.commons.codec.digest.DigestUtils;
+
+import com.google.common.base.Joiner;
+import com.google.common.base.Joiner.MapJoiner;
 
 /** 
 * @Description: 获取Md5加密结果
@@ -29,7 +33,7 @@ public class GetMd5ResultUtil {
 	* @return byte[]转换位16进制再转换为字符串
 	*/
 	public static String getMd5Result(Map<String, String> paramMap, String factorKey, String randomFactor) {
-		Map<String, String> treeMap = new TreeMap<String, String>(paramMap);
+		Map<String, String> treeMap = new TreeMap<String, String>(paramMap);// 排序
 
 		// 进行md5
 		StringBuffer buffer = new StringBuffer();
@@ -41,5 +45,20 @@ public class GetMd5ResultUtil {
 		}
 		buffer.append(factorKey).append(JOINEQUAL).append(randomFactor);
 		return DigestUtils.md5Hex(new String(buffer)).toUpperCase();
+	}
+
+	/**
+	* @Description: 使用guava的MapJoiner链接
+	* @param paramMap
+	* @param factorKey
+	* @param randomFactor
+	* @return 
+	*/
+	public static String getMd5ResultV2(Map<String, String> paramMap, String factorKey, String randomFactor) {
+		Map<String, String> treeMap = new TreeMap<>(paramMap);
+		MapJoiner joiner = Joiner.on("&").withKeyValueSeparator("=");
+		StringBuilder result =
+				new StringBuilder(joiner.join(treeMap)).append(factorKey).append(JOINEQUAL).append(randomFactor);
+		return DigestUtils.md5Hex(new String(result)).toUpperCase();
 	}
 }
