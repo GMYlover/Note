@@ -16,6 +16,11 @@ import com.github.rholder.retry.StopStrategies;
 import com.github.rholder.retry.WaitStrategies;
 import com.google.common.base.Predicates;
 
+/** 
+* @Description: guava重试
+* @author: gaomingyang
+* @date: 2020-08-27
+*/
 public class Retry {
 
 	@Resource
