@@ -1,7 +1,7 @@
 package com.supinfo.gmy.jdk8;
 
 /** 
-* @Description: stream 常见用法
+* @Description: stream 常见用法 
 * @author: gaomingyang
 * @date: 2020-08-27
 */
