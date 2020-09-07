@@ -5,7 +5,7 @@ package com.supinfo.gmy.jdk8;
 * @author: gaomingyang
 * @date: 2020-08-27
 */
-public class StreamDemo {
+public class StreamDemo { 
 
 	/**
 	* @Description:  map用法收集list对象里面的特定字段到新list里面,不用写成foreach去遍历并add,更优雅
