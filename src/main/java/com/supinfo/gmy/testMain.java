@@ -15,6 +15,7 @@ public class testMain {
 		System.out.println(666);
  				
 		System.out.println(9999);
+		System.out.println(0000);
 
  
 	}
