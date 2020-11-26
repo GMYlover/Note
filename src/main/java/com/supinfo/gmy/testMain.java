@@ -16,7 +16,8 @@ public class testMain {
  				
 		System.out.println(9999);
 
- 
+		System.out.println(7777);
+
 	}
 
 }
