@@ -11,6 +11,11 @@ public class testMain {
 		BigDecimalUtil.of(new BigDecimal(11)).leftEqualBetween(new BigDecimal(1), new BigDecimal(22));
 		BigDecimalUtil.of(new BigDecimal(11)).le(new BigDecimal(2));
 		System.out.println(123);
+		System.out.println(333);
+		System.out.println(666);
+				
+		System.out.println(9999);
+
 	}
 
 }
