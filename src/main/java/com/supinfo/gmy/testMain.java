@@ -1,25 +1,19 @@
 package com.supinfo.gmy;
 
 import java.security.MessageDigest;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-import com.supinfo.gmy.util.md5.GetMd5ResultUtil;
-
 public class testMain {
 
 	public static void main(String[] args) {
-		// System.out.println(createNonceStr());
-		//createNonceStr();
-		getStringa();
-		Map<String, String> paramMap = new HashMap<String, String>();
-		paramMap.put("123", "3");
-		paramMap.put("33", "4");
-		paramMap.put("44", "5");
-		//GetMd5ResultUtil.getMd5Result(paramMap, "", "");
+
+		int a = 99;
+		a &= -a;
+		System.out.println(a);
 	}
 
 	private static StringBuffer createNonceStr() {
@@ -30,6 +24,20 @@ public class testMain {
 		}
 		System.out.println(sb);
 		return sb;
+	}
+
+	public ArrayList<Integer> FindNumbersWithSum(int[] array, int sum) {
+		int i = 0, j = array.length - 1;
+		while (i < j) {
+			int cur = array[i] + array[j];
+			if (cur == sum)
+				return new ArrayList<>(Arrays.asList(array[i], array[j]));
+			if (cur < sum)
+				i++;
+			else
+				j--;
+		}
+		return new ArrayList<>();
 	}
 
 	/*	Map<String, String> paramMap = new HashMap<String, String>();
@@ -44,8 +52,10 @@ public class testMain {
 	private static void getStringa() {
 		// TODO Auto-generated method stub
 		StringBuffer sBuffer = new StringBuffer();
-		sBuffer.append("appId").append("=").append("dc3eecdcf9e7418ab01bbf59db300f59").append("&").append("nonceStr").append("=")
-				.append("HKEHMJLJMFMJDMKE").append("&").append("secret").append("=").append("36285d93b8874b4ab741e2176fcce4b9")
+		sBuffer.append("appId").append("=").append("dc3eecdcf9e7418ab01bbf59db300f59").append("&").append("nonceStr")
+				.append("=")
+				.append("HKEHMJLJMFMJDMKE").append("&").append("secret").append("=")
+				.append("36285d93b8874b4ab741e2176fcce4b9")
 				.append("&").append("timestamp").append("=").append("1607918076");
 		// DigestUtils.sha256(new String(sBuffer));
 		System.out.println(DigestUtils.sha256Hex(new String(sBuffer).getBytes()));
