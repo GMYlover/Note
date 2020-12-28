@@ -1,7 +1,10 @@
 package com.supinfo.gmy.algorithm;
 
 /** 
-* @Description: "nowcoder. a am I"
+* @Description: 翻转单词顺序列
+* 题目应该有一个隐含条件，就是不能用额外的空间。虽然 Java 的题目输入参数为 String 类型，需要先创建一个字符数组使得空间复杂度为 O(N)，但是正确的参数类型应该和原书一样，为字符数组，并且只能使用该字符数组的空间。
+* 任何使用了额外空间的解法在面试时都会大打折扣，包括递归解法。正确的解法应该是和书上一样，先旋转每个单词，再旋转整个字符串。
+* "nowcoder. a am I"
 "I am a nowcoder."
 先翻转每个单词，再反转数组
 * @author: gaomingyang
